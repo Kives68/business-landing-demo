@@ -1,0 +1,57 @@
+/* Sections with background images */
+#about {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                url('https://source.unsplash.com/1600x600/?developer,workspace') no-repeat center center/cover;
+}
+
+#projects {
+    background: linear-gradient(rgba(244,244,244,0.9), rgba(244,244,244,0.9)), 
+                url('https://source.unsplash.com/1600x600/?technology,code') no-repeat center center/cover;
+}
+
+#skills {
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                url('https://source.unsplash.com/1600x600/?programming,laptop') no-repeat center center/cover;
+}
+
+#contact {
+    background: linear-gradient(rgba(244,244,244,0.9), rgba(244,244,244,0.9)), 
+                url('https://source.unsplash.com/1600x600/?email,contact') no-repeat center center/cover;
+}
+
+/* Optional overlay effect for readability */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: rgba(0,0,0,0.1);
+}
+
+/* Make sure container content is above background */
+section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add small decorative image under headings */
+section h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    background: #00bcd4;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
+}
